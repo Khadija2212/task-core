@@ -30,4 +30,7 @@ public class TaskService {
     task.setStatus(status);
     return taskRepository.save(task);
     }
+    public long countCompletedTasks() {
+    return taskRepository.findByStatus(TaskStatus.DONE).size();
+}
 }
